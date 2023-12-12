@@ -16,12 +16,12 @@ public class ChatGPTManager : MonoBehaviour
     [SerializeField] private Transform contentPanel;
     [SerializeField] private GameObject userMessagePrefab;
     [SerializeField] private GameObject chatGPTMessagePrefab;
-    
+
     // STT and TTS
     [SerializeField] private SpeechToText speechToText;
     [SerializeField] private TextToSpeech textToSpeech;
 
-    private OpenAIApi openAI = new OpenAIApi("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");  // Replace with your OpenAI API key
+    private OpenAIApi openAI = new OpenAIApi("YOUR_OPENAI_API_KEY");  // Replace with your OpenAI API key
     private List<ChatMessage> messages = new List<ChatMessage>(); // History of messages
     private bool responseReceived = false;
     private GameObject currentLoadingMessageObj; // Current message object that displays a loading indicator while awaiting response
@@ -31,9 +31,9 @@ public class ChatGPTManager : MonoBehaviour
     {
         // Subscribe to the STT event
         speechToText.OnTranscriptionComplete += AddUserMessage;
-            
+
     }
-    
+
     private void OnDestroy()
     {
         speechToText.OnTranscriptionComplete -= AddUserMessage;
@@ -52,7 +52,7 @@ public class ChatGPTManager : MonoBehaviour
 
         CreateMessage(userText, true); // true indicating it's a user message
         messages.Add(newMessage); // Add to message history
-        
+
         AskChatGPT($"In 15 words or less, {userText}");
     }
 
@@ -119,7 +119,7 @@ public class ChatGPTManager : MonoBehaviour
         }
     }
 
-    // Instantiate a user/ChatGPT message prefab and add it to the chat UI 
+    // Instantiate a user/ChatGPT message prefab and add it to the chat UI
     private GameObject CreateMessage(string text, bool isUserMessage)
     {
         GameObject prefabToUse = isUserMessage ? userMessagePrefab : chatGPTMessagePrefab;
@@ -141,4 +141,3 @@ public class ChatGPTManager : MonoBehaviour
         contentPanel.GetComponentInParent<ScrollRect>().normalizedPosition = new Vector2(0, 0);
     }
 }
-

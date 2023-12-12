@@ -20,8 +20,9 @@ public class TextToSpeech : MonoBehaviour
     {
         // Replace with your Amazon credentials
         //var credentials = new BasicAWSCredentials("YOUR_ACCESS_KEY", "YOUR_SECRET_KEY");
-        var credentials = new BasicAWSCredentials("AKIA23UCKYXR3SWWVRA6", "eor9YvF5Ch48rKYjSKcvlxayr78NJlNEsQWOxvuk");
-        var client = new AmazonPollyClient(credentials, RegionEndpoint.USWest2);
+        var credentials = new BasicAWSCredentials("YOUR_ACCESS_KEY", "YOUR_SECRET_KEY"); // Replace with your Amazon credentials
+        var client = new AmazonPollyClient(credentials, RegionEndpoint.USEast1); // Set RegionEndpoint.USEast1 according to your setup. This specifies the AWS region.
+
 
         // Create request with desired settings
         var request = new SynthesizeSpeechRequest()
@@ -37,7 +38,7 @@ public class TextToSpeech : MonoBehaviour
         WriteIntoFile(response.AudioStream);
 
         string audioPath;
-        
+
         #if UNITY_ANDROID && !UNITY_EDITOR
             audioPath = $"jar:file://{Application.persistentDataPath}/audio.mp3";
         #elif (UNITY_IOS || UNITY_OSX) && !UNITY_EDITOR
@@ -76,4 +77,3 @@ public class TextToSpeech : MonoBehaviour
         }
     }
 }
-

@@ -10,17 +10,15 @@ using OpenAI;
 /// </summary>
 public class SpeechToText : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource; 
-    [SerializeField] private AudioClip startRecordingClip; 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip startRecordingClip;
 
     public event Action<string> OnTranscriptionComplete;
 
     private const string FileName = "output.wav";
     private const int Duration = 5; // Recording timer duration set to 5 seconds
     private AudioClip clip;
-    //Replace 'YOUR_OPENAI_API_KEY' with your actual OpenAI API key
-    //private OpenAIApi openAiApi = new OpenAIApi("YOUR_OPENAI_API_KEY");
-    private OpenAIApi openAiApi = new OpenAIApi("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");
+    private OpenAIApi openAiApi = new OpenAIApi("YOUR_OPENAI_API_KEY"); //Replace 'YOUR_OPENAI_API_KEY' with your actual OpenAI API key
 
     private void Start()
     {
