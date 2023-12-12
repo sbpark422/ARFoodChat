@@ -18,8 +18,6 @@ public class TextToSpeech : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     public async void MakeAudioRequest(string message)
     {
-        // Replace with your Amazon credentials
-        //var credentials = new BasicAWSCredentials("YOUR_ACCESS_KEY", "YOUR_SECRET_KEY");
         var credentials = new BasicAWSCredentials("YOUR_ACCESS_KEY", "YOUR_SECRET_KEY"); // Replace with your Amazon credentials
         var client = new AmazonPollyClient(credentials, RegionEndpoint.USEast1); // Set RegionEndpoint.USEast1 according to your setup. This specifies the AWS region.
 
