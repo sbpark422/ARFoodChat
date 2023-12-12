@@ -1,0 +1,8 @@
+<linker>
+    <assembly fullname="AWSSDK.Core">
+     <type fullname="Amazon.Util.Internal.PlatformServices.NetworkReachability" preserve="all"/>
+    <namespace fullname="Amazon.Util.Internal.PlatformServices" preserve="all"/>
+    </assembly>
+    <assembly fullname="AWSSDK.Polly" preserve="all"/>
+    <assembly fullname="AWSSDK.Lambda" preserve="all"/>
+</linker>
