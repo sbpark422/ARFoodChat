@@ -12,6 +12,8 @@ Before running the application, please make sure the following modification:
 1. Navigate to `Packages → OpenAIUnity → Runtime → DataTypes`.
 2. Locate the `CreateChatCompletionResponse` struct.
 3. Make sure you have: `public string SystemFingerprint { get; set; }`.
+
+Please ensure you have obtained your OpenAI and AWS credentials. For guidance on how to acquire these keys, please refer to the API Integration section below.
    
 ## Overview
 AR Food Chat is an innovative AR application that combines advanced AR capabilities with AI-driven interaction. It enables users to engage with their surrounding environment and obtain information about items through an AR Assistant, enhancing the user experience with AI-driven conversation and speech synthesis. 
