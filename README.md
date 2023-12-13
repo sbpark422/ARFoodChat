@@ -10,7 +10,7 @@ For a demo, please visit this link: [Demo Video](https://youtu.be/OvZavwg-3Z4?si
 ## Pre-Installation Steps
 Before running the application, please make the following modification:
 1. Navigate to `Packages → OpenAIUnity → Runtime → DataTypes`.
-2. Locate the `CreateChatCompletion**Response**` struct.
+2. Locate the `CreateChatCompletionResponse` struct.
 3. Add the following line of code: `public string SystemFingerprint { get; set; }`.
    
 ## Overview
