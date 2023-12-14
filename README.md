@@ -5,6 +5,8 @@ For detailed documentation, please visit: [AR Food Chat Documentation](https://d
 
 For a demo, please visit this link: [Demo Video](https://youtu.be/OvZavwg-3Z4?si=-xdcde0flM5MaRlu)
 
+![demo](Sample/demo.gif)
+
 ## Pre-Installation Steps
 Before running the application, please make sure the following modification:
 1. Navigate to `Packages → OpenAIUnity → Runtime → DataTypes`.
