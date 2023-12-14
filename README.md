@@ -5,8 +5,6 @@ For detailed documentation, please visit: [AR Food Chat Documentation](https://d
 
 For a demo, please visit this link: [Demo Video](https://youtu.be/OvZavwg-3Z4?si=-xdcde0flM5MaRlu)
 
-![demo](Sample/demo.gif)
-
 ## Pre-Installation Steps
 Before running the application, please make sure the following modification:
 1. Navigate to `Packages → OpenAIUnity → Runtime → DataTypes`.
@@ -43,6 +41,7 @@ The core functionality of the app revolves around object detection, user interac
    - Example: `var openai = new OpenAIApi("YOUR_OPENAI_API_KEY”);`
 
 ### Amazon Polly
+[Steps for Amazon Polly Credentials](https://docs.google.com/document/d/14HwxeHUHJ54SVlm58A0AyBSRIelwywRMP3ey9AgIOfE/edit?usp=sharing)
 1. Set up an Amazon Web Services (AWS) account and create a Polly instance.
 2. Obtain Access Key and Secret Key from AWS.
 3. Pass these keys into the `TextToSpeech` class.
