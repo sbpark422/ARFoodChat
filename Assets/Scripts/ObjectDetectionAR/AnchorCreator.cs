@@ -8,7 +8,7 @@ using UnityEngine.XR.ARSubsystems;
 /// Modified from https://github.com/derenlei/Unity_Detection2AR
 /// <summary>
 public class AnchorCreator : MonoBehaviour
-{   
+{
     private const TrackableType trackableTypes = TrackableType.Planes | TrackableType.FeaturePoint;
     private static List<ARRaycastHit> s_Hits = new List<ARRaycastHit>();
 
@@ -140,22 +140,22 @@ public class AnchorCreator : MonoBehaviour
     private bool Pos2Anchor(float x, float y, BoundingBox outline)
     {
         anchorObj_mesh.text = $"{outline.Label}: {(int)(outline.Confidence * 100)}%";
-        
+
         // Load a 3d prefab based on the outline label (now only for "apple")
         // ** Future plan **: using ScriptableObjects to map labels to their corresponding 3D models
-        if (outline.Label == "apple")
+        var prefab = Resources.Load<GameObject>(outline.Label);
+        if (prefab != null)
         {
-            var prefab = Resources.Load<GameObject>(outline.Label);
-            
-            if (prefab != null)
+            var instantiatedPrefab = Instantiate(prefab);
+            instantiatedPrefab.transform.SetParent(anchorObj_mesh.transform, false);
+        }
+        else
+        {
+            foreach (Transform child in anchorObj_mesh.transform)
             {
-                var instantiatedPrefab = Instantiate(prefab);
-                instantiatedPrefab.transform.SetParent(anchorObj_mesh.transform, false);
+                child.gameObject.SetActive(false);
             }
-            else
-            {
-                Debug.LogWarning($"Prefab with name '{outline.Label}' not found in Resources.");
-            }
+            Debug.LogWarning($"Prefab with name '{outline.Label}' not found in Resources.");
         }
 
         // Perform the raycast
@@ -192,4 +192,3 @@ public class AnchorCreator : MonoBehaviour
 
 
 }
- 
