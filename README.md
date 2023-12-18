@@ -3,7 +3,7 @@
 ## Documentation
 For detailed documentation, please visit: [AR Food Chat Documentation](https://docs.google.com/document/d/1nZxGlG1p7KXSEAtTChv40D7kMs2SQ1lDM1qrsHjhr4g/edit?usp=sharing)
 
-For a demo, please visit this link: [Ver2 in Development](https://youtu.be/lRFZLqbAqxo?si=iau-VURsxzILcOqX) / [Demo Video](https://youtu.be/OvZavwg-3Z4?si=-xdcde0flM5MaRlu)
+For a demo, please visit this link: [Ver2 in Development](https://youtu.be/lRFZLqbAqxo?si=iau-VURsxzILcOqX) / [Ver1](https://youtu.be/OvZavwg-3Z4?si=-xdcde0flM5MaRlu)
 
 ![demo](Sample/demo.gif)
 
